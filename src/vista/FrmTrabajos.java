@@ -18,7 +18,7 @@ public class FrmTrabajos extends javax.swing.JFrame {
     ArrayList<Trabajos> trabajosLista;
 
     String SSQL;
-
+//prueba
     Clientes clientesObj = new Clientes();
 
     TMControl tmControl = new TMControl();
