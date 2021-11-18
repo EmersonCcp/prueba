@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteM" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ef2f4224-9ac4-404d-adcc-28a6df998742">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Gabriel\\Documents\\NetBeansProjects\\FlexSystem\\src\\reportes\\"]]></defaultValueExpression>
+	</parameter>
 	<queryString language="SQL">
 		<![CDATA[SELECT a.ma_codigo,a.ma_nombre,a.ma_precio,a.ma_fecha_compra,a.ma_precio_total,a.ma_cantidad 
 from materiales a,filtro_materiales b
@@ -115,6 +120,10 @@ where (a.ma_fecha_compra >= b.ma_fecha_inicio and a.ma_fecha_compra <= b.ma_fech
 				<reportElement x="506" y="10" width="45" height="30" uuid="0e3628c5-2102-4011-b4fe-0d5ac6e8bf5a"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="3" y="0" width="157" height="86" uuid="9eb7823a-fa08-4f2d-a13f-1fac6ec1b62e"/>
+				<imageExpression><![CDATA["C:\\Users\\Gabriel\\Documents\\NetBeansProjects\\FlexSystem\\src\\imagenes\\logoredondeadoMarconflex.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -228,13 +237,13 @@ where (a.ma_fecha_compra >= b.ma_fecha_inicio and a.ma_fecha_compra <= b.ma_fech
 			</textField>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band height="42" splitType="Stretch">
+			<subreport>
+				<reportElement x="120" y="0" width="200" height="42" uuid="64ee84c4-25a4-4d4e-b43a-ef53710ca299"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ReporteMDetalle.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
 	</summary>
 </jasperReport>

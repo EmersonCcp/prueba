@@ -45,6 +45,8 @@ public class MaterialesDAO implements IDAO_Materiales {
                 );
                 suma= suma+ rs.getDouble("ma_precio_total");
                 lista.add(materialesObj);
+                
+               
 
             }
             //JOptionPane.showMessageDialog(null, "LA cantidad total es "+suma);

@@ -37,8 +37,8 @@ public class ClientesControl implements IDAO_Clientes{
     }
 
     @Override
-    public void listarClientesComboBox(JComboBox cbxClientes) {
-         new ClientesDAO().listarClientesComboBox(cbxClientes);
+    public ArrayList <String> llenarComboClientes() {
+         return new ClientesDAO().llenarComboClientes();
     }
 
     @Override

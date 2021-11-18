@@ -516,8 +516,8 @@ public class FrmMateriales extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnGenerarInformesMateriales)
                 .addContainerGap())
         );
@@ -581,6 +581,7 @@ public class FrmMateriales extends javax.swing.JFrame {
 
             txtMaterial.setText(materialesObj.getMa_nombre());
             txtID.setText(materialesObj.getMa_codigo().toString());
+            JOptionPane.showMessageDialog(null, "El codigo es: "+materialesObj.getMa_codigo());
             txtCantidad.setText(String.valueOf(materialesObj.getMa_cantidad()));
             txtPrecioMaterial.setText(String.valueOf(materialesObj.getPrecio()));
             txtF_CompraM.setText(materialesObj.getMa_fecha_compra());

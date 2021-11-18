@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="dist/FlexSystem.jar"/>
+	<classpathentry kind="lib" path="dist/lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-beanutils-1.9.4.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="dist/lib/groovy-all-2.4.5.jar"/>
+	<classpathentry kind="lib" path="dist/lib/itext-pdfa-5.5.4.jar"/>
+	<classpathentry kind="lib" path="dist/lib/itextpdf-5.5.4.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jasperreports-6.11.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jfreechart-1.0.12.jar"/>
+	<classpathentry kind="lib" path="dist/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="dist/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="dist/lib/mysql-connector-java-5.1.23-bin.jar"/>
+	<classpathentry kind="lib" path="dist/lib/mysql-connector-java-5.1.47.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-3.16.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-excelant-3.16.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-ooxml-3.16.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-ooxml-schemas-3.16.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-scratchpad-3.16.jar"/>
+	<classpathentry kind="lib" path="dist/lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

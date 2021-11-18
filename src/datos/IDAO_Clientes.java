@@ -18,6 +18,6 @@ public interface IDAO_Clientes {
     public void insertarCliente(Object objMaterial);
     public void modificarCliente(Object objMaterial);
     public void eliminarCliente(Object objMaterial);
-    public void listarClientesComboBox(JComboBox cbxClientes);
+    public ArrayList <String> llenarComboClientes();
     public String Cliente(int i);
 }

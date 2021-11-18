@@ -9,6 +9,6 @@ public interface IDAO_Trabajos {
     public void insertarTrabajo(Object objTrabajo);
     public void modificarTrabajo(Object objTrabajo);
     public void eliminarTrabajo(Object objTrabajo);
-    public ArrayList listarTrabajoDetalle(String condicionM);
+    public int FiltrarIdTrabajo(Object id);
     
 }

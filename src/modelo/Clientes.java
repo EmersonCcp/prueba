@@ -21,6 +21,11 @@ public class Clientes {
     public Clientes() {
     }
 
+    public Clientes(Integer cli_codigo) {
+        this.cli_codigo = cli_codigo;
+    }
+    
+
     public Clientes(Integer cli_codigo, String cli_nombre, String cli_apellido, String cli_telefono, String cli_direccion, String cli_ruc) {
         this.cli_codigo = cli_codigo;
         this.cli_nombre = cli_nombre;

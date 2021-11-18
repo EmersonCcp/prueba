@@ -37,9 +37,9 @@ public class ClientesDAO implements IDAO_Clientes {
             SSQL = "Select * from clientes " + condicion;
             ps = con.prepareStatement(SSQL);
             rs = ps.executeQuery();
-            while(rs.next()){
-                clientesObj= new Clientes(
-                rs.getInt("cli_codigo"),
+            while (rs.next()) {
+                clientesObj = new Clientes(
+                        rs.getInt("cli_codigo"),
                         rs.getString("cli_nombre"),
                         rs.getString("cli_apellido"),
                         rs.getString("cli_telefono"),
@@ -47,18 +47,31 @@ public class ClientesDAO implements IDAO_Clientes {
                         rs.getString("cli_ruc")
                 );
                 lista.add(clientesObj);
-                
+
             }
             return lista;
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error en listar "+e);
+            JOptionPane.showMessageDialog(null, "Error en listar " + e);
         }
         return null;
     }
 
     @Override
     public void insertarCliente(Object objMaterial) {
-
+        try {
+            clientesObj=(Clientes) objMaterial;
+            String ssql = "INSERT INTO clientes (cli_nombre,cli_ruc,cli_telefono,cli_direccion) VALUES (?,?,?,?,?)";
+            ps = con.prepareStatement(ssql);
+            ps.setString(1, clientesObj.getCli_nombre());
+            ps.setString(2, clientesObj.getCli_apellido());
+            ps.setString(3, clientesObj.getCli_ruc());
+            ps.setString(4, clientesObj.getCli_telefono());
+            ps.setString(5, clientesObj.getCli_direccion());
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Ingresado con Exito");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error en insertar ade clientes "+ex);
+        }
     }
 
     @Override
@@ -72,47 +85,45 @@ public class ClientesDAO implements IDAO_Clientes {
     }
 
     @Override
-    public void listarClientesComboBox(JComboBox cbxClientes) {
+    public ArrayList<String> llenarComboClientes() {
+        ArrayList<String> lista = new ArrayList<String>();
         try {
-            SSQL="select a.cli_nombre,a.cli_ruc from clientes a order by a.cli_nombre asc";
+            SSQL = "select a.cli_nombre,a.cli_ruc, a.cli_codigo from clientes a order by a.cli_codigo";
             ps = con.prepareStatement(SSQL);
             rs = ps.executeQuery();
-            cbxClientes.addItem("Seleccione..");
-            while(rs.next()){
-                cbxClientes.addItem(rs.getString("cli_nombre")+" - "+rs.getString("cli_ruc"));
-                
+
+            while (rs.next()) {
+                lista.add(rs.getInt("cli_codigo") + " - " + rs.getString("cli_nombre") + " - " + rs.getString("cli_ruc"));
+
             }
-            
+            return lista;
+
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error en listar combobox "+e);
+            JOptionPane.showMessageDialog(null, "Error en listar combobox " + e);
         }
-        
+        return lista;
+
     }
 
     @Override
     public String Cliente(int i) {
-        String a="select a.cli_nombre from clientes a where a.cli_codigo="+i;
-        String nombre="";
+        String a = "select a.cli_nombre from clientes a where a.cli_codigo=" + i;
+        String nombre = "";
         try {
-            ps=con.prepareStatement(a);
-            
-            rs=ps.executeQuery();
-            while(rs.next()){
-                nombre=""+rs.getString("cli_nombre");
+            ps = con.prepareStatement(a);
+
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                nombre = "" + rs.getString("cli_nombre");
             }
-            
-            
+
             //JOptionPane.showMessageDialog(null, nombre);
             return nombre;
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "error en filtrar el nombre");
         }
         return a;
     }
-
-    
-
-    
 
 }

@@ -37,9 +37,11 @@ public class TrabajosControl implements IDAO_Trabajos{
     }
 
     @Override
-    public ArrayList listarTrabajoDetalle(String condicionM) {
-        return new TrabajosDAO().listarTrabajoDetalle(condicionM);
+    public int FiltrarIdTrabajo(Object id) {
+         return new TrabajosDAO().FiltrarIdTrabajo(id);
     }
+
+    
     
     
 }

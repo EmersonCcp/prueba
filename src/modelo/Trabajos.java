@@ -1,7 +1,7 @@
 
 package modelo;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+
 
 
 public class Trabajos {
@@ -9,15 +9,34 @@ public class Trabajos {
     private String tra_nombre;
     private String tra_fecha_entrega;
     private String tra_descripcion;
-    private Integer tra_costo;
-    private Integer tra_ganancia;
+    private Double tra_costo;
+    private Double tra_ganancia;
     private Integer fk_cliente;
     
 
     public Trabajos() {
     }
 
-    public Trabajos(Integer tra_codigo, String tra_nombre, String tra_fecha_entrega, String tra_descripcion, Integer tra_costo, Integer tra_ganancia, Integer fk_cliente) {
+    public Trabajos(Integer tra_codigo) {
+        this.tra_codigo = tra_codigo;
+    }
+
+   
+
+    
+    
+
+    public Trabajos(Integer tra_codigo, String tra_nombre, String tra_fecha_entrega, String tra_descripcion, Double tra_costo, Integer fk_cliente) {
+        this.tra_codigo = tra_codigo;
+        this.tra_nombre = tra_nombre;
+        this.tra_fecha_entrega = tra_fecha_entrega;
+        this.tra_descripcion = tra_descripcion;
+        this.tra_costo = tra_costo;
+        this.fk_cliente = fk_cliente;
+    }
+    
+
+    public Trabajos(Integer tra_codigo, String tra_nombre, String tra_fecha_entrega, String tra_descripcion, Double tra_costo, Double tra_ganancia, Integer fk_cliente) {
         this.tra_codigo = tra_codigo;
         this.tra_nombre = tra_nombre;
         this.tra_fecha_entrega = tra_fecha_entrega;
@@ -26,7 +45,7 @@ public class Trabajos {
         this.tra_ganancia = tra_ganancia;
         this.fk_cliente = fk_cliente;
     }
-   
+
     public Integer getTra_codigo() {
         return tra_codigo;
     }
@@ -59,19 +78,19 @@ public class Trabajos {
         this.tra_descripcion = tra_descripcion;
     }
 
-    public Integer getTra_costo() {
+    public Double getTra_costo() {
         return tra_costo;
     }
 
-    public void setTra_costo(Integer tra_costo) {
+    public void setTra_costo(Double tra_costo) {
         this.tra_costo = tra_costo;
     }
 
-    public Integer getTra_ganancia() {
+    public Double getTra_ganancia() {
         return tra_ganancia;
     }
 
-    public void setTra_ganancia(Integer tra_ganancia) {
+    public void setTra_ganancia(Double tra_ganancia) {
         this.tra_ganancia = tra_ganancia;
     }
 
@@ -82,6 +101,8 @@ public class Trabajos {
     public void setFk_cliente(Integer fk_cliente) {
         this.fk_cliente = fk_cliente;
     }
+
+    
 
     
     

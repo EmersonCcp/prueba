@@ -23,7 +23,8 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
-        ImageIcon imagen= new ImageIcon("src/imagenes/usu.png");
+        ImageIcon imagen;
+        imagen = new ImageIcon("src/imagenes/usu.png");
         Icon icono=new ImageIcon(imagen.getImage().getScaledInstance(usu_icon.getWidth(), usu_icon.getHeight(),Image.SCALE_DEFAULT));
         usu_icon.setIcon(icono);
         this.repaint();
@@ -51,7 +52,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         txtUsuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jlbContraseña = new javax.swing.JLabel();
         txtContraseña = new javax.swing.JPasswordField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -79,8 +80,8 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         jLabel2.setText("Usuario");
 
-        jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
-        jLabel3.setText("Contraseña");
+        jlbContraseña.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
+        jlbContraseña.setText("Contraseña");
 
         txtContraseña.setBackground(new java.awt.Color(255, 255, 255));
         txtContraseña.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
@@ -122,10 +123,13 @@ public class FrmInicioSesion extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
+        usu_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usu.png"))); // NOI18N
         usu_icon.setText("jLabel4");
 
+        contra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contra.png"))); // NOI18N
         contra.setText("jLabel4");
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
         jLabel5.setToolTipText("");
 
         jLabel1.setFont(new java.awt.Font("Roboto Thin", 1, 8)); // NOI18N
@@ -146,7 +150,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
                                     .addComponent(contra, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel3)
+                                    .addComponent(jlbContraseña)
                                     .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                                     .addComponent(jLabel2)
                                     .addComponent(txtContraseña)
@@ -179,7 +183,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addComponent(jlbContraseña)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,7 +227,8 @@ public class FrmInicioSesion extends javax.swing.JFrame {
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
         String usuario = txtUsuario.getText();
 
-        String contraseña = txtContraseña.getText();
+        String contraseña;
+        contraseña = txtContraseña.getText();
         int condicion = 0;
         if (usuario.equals("") || contraseña.equals("")) {
             JOptionPane.showMessageDialog(null, "Debe completar todos los campos");
@@ -276,13 +281,13 @@ public class FrmInicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel contra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel jlbContraseña;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtUsuario;
     private javax.swing.JLabel usu_icon;
