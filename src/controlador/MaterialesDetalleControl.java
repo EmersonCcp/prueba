@@ -16,8 +16,8 @@ import java.util.ArrayList;
 public class MaterialesDetalleControl implements IDAO_MaterialesDetalle{
 
     @Override
-    public ArrayList listarMD(String condicionM) {
-        return new MaterialesDetalleDAO().listarMD(condicionM);
+    public ArrayList listarMD(String condicionM,String condicionT) {
+        return new MaterialesDetalleDAO().listarMD(condicionM,condicionT);
     }
 
     @Override
@@ -33,6 +33,11 @@ public class MaterialesDetalleControl implements IDAO_MaterialesDetalle{
     @Override
     public void eliminarMD(Object objMaterial) {
         new MaterialesDetalleDAO().eliminarMD(objMaterial);
+    }
+
+    @Override
+    public void ModificarGananciasTrabajos(String condicion) {
+        new MaterialesDetalleDAO().ModificarGananciasTrabajos(condicion);
     }
 
     

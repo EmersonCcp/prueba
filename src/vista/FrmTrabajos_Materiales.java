@@ -45,7 +45,7 @@ public class FrmTrabajos_Materiales extends javax.swing.JFrame {
         modeloTM.addColumn("Precio Total");
 
         //JOptionPane.showMessageDialog(null, txtID_TM.getText());
-        mdLista = mdControl.listarMD(where);
+        mdLista = mdControl.listarMD(where,"");
         
         Object[] filaTM = new Object[5];
         for (int t = 0; t < mdLista.size(); t++) {
@@ -289,13 +289,19 @@ public class FrmTrabajos_Materiales extends javax.swing.JFrame {
         } else if (id == null) {
             mdObj = new MaterialesDetalle(id, material, cantidad, precio, precio_total, codigo);
             mdControl.insertarMD(mdObj);
-            this.Refresh();
+            
         } else {
             mdObj = new MaterialesDetalle(id, material, cantidad, precio, precio_total);
             JOptionPane.showMessageDialog(null, "modificar:" + id);
             mdControl.modificarMD(mdObj);
-            this.Refresh();
+            
         }
+        
+        SSQL=""+codigo;
+        
+        mdControl.ModificarGananciasTrabajos(SSQL);
+        this.Refresh();
+        
         txtMaterialTM.setText("");
         txtCantidadTM.setText("");
         txtPrecioTM.setText("");
@@ -310,7 +316,7 @@ public class FrmTrabajos_Materiales extends javax.swing.JFrame {
             DefaultTableModel modelo = (DefaultTableModel) tblTrabajos_Materiales.getModel();
             Integer ma_codigo = (Integer) modelo.getValueAt(filaNum, 0);
             String whereTmp = " where md_codigo='" + ma_codigo + "'";
-            mdLista = mdControl.listarMD(whereTmp);
+            mdLista = mdControl.listarMD(whereTmp,"");
             mdObj = mdLista.get(0);
             
             txtMaterialTM.setText(mdObj.getMd_material());

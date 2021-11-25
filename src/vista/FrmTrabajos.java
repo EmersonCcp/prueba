@@ -46,10 +46,10 @@ public class FrmTrabajos extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.Refresh();
 
-        ImageIcon imagen = new ImageIcon("src/imagenes/atras.png");
+        /*ImageIcon imagen = new ImageIcon("src/imagenes/atras.png");
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(lblAtras.getWidth(), lblAtras.getHeight(), Image.SCALE_DEFAULT));
         lblAtras.setIcon(icono);
-        this.repaint();
+        this.repaint();*/
 
     }
 
@@ -101,7 +101,7 @@ public class FrmTrabajos extends javax.swing.JFrame {
         modeloMD.addColumn("Cantidad");
         modeloMD.addColumn("Precio Unitario");
         modeloMD.addColumn("Precio Total");
-        mdLista = mdControl.listarMD("");
+        mdLista = mdControl.listarMD("","");
         Object[] filaMD = new Object[5];
         for (int t = 0; t < mdLista.size(); t++) {
             mdObj = mdLista.get(t);
@@ -161,6 +161,7 @@ public class FrmTrabajos extends javax.swing.JFrame {
         tblTM = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jmiVerMateriales = new javax.swing.JMenuItem();
@@ -343,6 +344,7 @@ public class FrmTrabajos extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        lblAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/atras.png"))); // NOI18N
         lblAtras.setText("jLabel11");
         lblAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblAtras.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -416,7 +418,7 @@ public class FrmTrabajos extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(lblAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(txtID)
@@ -492,6 +494,14 @@ public class FrmTrabajos extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel10.setText("Materiales del Trabajo");
 
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/refresh.png"))); // NOI18N
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+
         jMenu1.setText("Opciones");
 
         jmiVerMateriales.setText("Ver Materiales");
@@ -538,20 +548,19 @@ public class FrmTrabajos extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(204, 204, 204)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(111, 111, 111)
                         .addComponent(jLabel7)
                         .addGap(294, 294, 294)
                         .addComponent(jLabel10))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -565,10 +574,15 @@ public class FrmTrabajos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel10))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel10)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -603,33 +617,9 @@ public class FrmTrabajos extends javax.swing.JFrame {
                 String descripcion = txtDescripcion.getText();
 
                 Double costo = Double.parseDouble(txtCosto.getText());
-                
-
-                SSQL = "SELECT md_precio_total from materiales_detalle where fk_trabajo="+id;
-                PreparedStatement ps;
-                ResultSet rs;
-                Connection con = null;
-                con = new Conexion().Conectar();
                 double precio_total=0;
-                try {
-                    ps=con.prepareStatement(SSQL);
-                    rs=ps.executeQuery();
-                    while(rs.next()){
-                        precio_total=precio_total+rs.getDouble("md_precio_total");
-                    }
-                    JOptionPane.showMessageDialog(null, id+" mas "+precio_total);
-                    
-                } catch (SQLException e) {
-                    JOptionPane.showMessageDialog(null, "Error en aqui");
-                }
-                
-                
-                Double ganancia = costo - precio_total;
-                
-                
-                
-                
-                
+
+                double ganancia = 0;
 
                 JOptionPane.showMessageDialog(null, id + " " + trabajo + " " + f_entrega + " " + descripcion + " " + costo + " " + categoriaSelecc);
 
@@ -667,7 +657,7 @@ public class FrmTrabajos extends javax.swing.JFrame {
             modeloMD.addColumn("Precio Unitario");
             modeloMD.addColumn("Precio Total");
             String where = " where fk_trabajo=" + filaNum;
-            mdLista = mdControl.listarMD(where);
+            mdLista = mdControl.listarMD(where,"");
             Object[] filaMD = new Object[5];
             for (int t = 0; t < mdLista.size(); t++) {
                 mdObj = mdLista.get(t);
@@ -764,6 +754,10 @@ public class FrmTrabajos extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_lblAtrasMouseClicked
 
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        this.Refresh();
+    }//GEN-LAST:event_jLabel11MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -807,6 +801,7 @@ public class FrmTrabajos extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

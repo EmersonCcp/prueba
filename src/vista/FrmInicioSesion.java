@@ -23,21 +23,21 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
-        ImageIcon imagen;
+        /*ImageIcon imagen;
         imagen = new ImageIcon("src/imagenes/usu.png");
         Icon icono=new ImageIcon(imagen.getImage().getScaledInstance(usu_icon.getWidth(), usu_icon.getHeight(),Image.SCALE_DEFAULT));
         usu_icon.setIcon(icono);
-        this.repaint();
+       // this.repaint();
         
         ImageIcon imagenC= new ImageIcon("src/imagenes/contra.png");
         Icon iconoC=new ImageIcon(imagenC.getImage().getScaledInstance(contra.getWidth(), contra.getHeight(),Image.SCALE_DEFAULT));
         contra.setIcon(iconoC);
-        this.repaint();
+        //this.repaint();
         
         ImageIcon imagenUsu= new ImageIcon("src/imagenes/usuario.png");
         Icon iconoUsu=new ImageIcon(imagenUsu.getImage().getScaledInstance(jLabel5.getWidth(),jLabel5.getHeight(),Image.SCALE_DEFAULT));
         jLabel5.setIcon(iconoUsu);
-        this.repaint();
+        //this.repaint();*/
     }
 
     /**

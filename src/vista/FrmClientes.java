@@ -21,11 +21,11 @@ public class FrmClientes extends javax.swing.JFrame {
     public FrmClientes() {
         initComponents();
         this.setLocationRelativeTo(null);
-        ImageIcon imagen=new ImageIcon("src/imagenes/atras.png");
+        /*ImageIcon imagen=new ImageIcon("src/imagenes/atras.png");
         Icon icono=new ImageIcon(imagen.getImage().getScaledInstance(jlbAtras.getWidth(), jlbAtras.getHeight(),Image.SCALE_DEFAULT));
         jlbAtras.setIcon(icono);
         this.repaint();
-        this.refresh();
+        this.refresh();*/
         
     }
     
@@ -302,6 +302,7 @@ public class FrmClientes extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jlbAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/atras.png"))); // NOI18N
         jlbAtras.setText("jLabel7");
         jlbAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jlbAtras.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -345,14 +346,14 @@ public class FrmClientes extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlbAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jlbAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jlbAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlbAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))

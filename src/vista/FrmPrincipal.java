@@ -23,7 +23,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public FrmPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        ImageIcon imagen= new ImageIcon("src/imagenes/materiales.jpg");
+        this.Refresh();
+        
+    }
+    
+    void Refresh(){
+       /*ImageIcon imagen= new ImageIcon("src/imagenes/materiales.jpg");
         Icon icono=new ImageIcon(imagen.getImage().getScaledInstance(lblmateriales.getWidth(), lblmateriales.getHeight(),Image.SCALE_DEFAULT));
         lblmateriales.setIcon(icono);
         this.repaint();
@@ -36,8 +41,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         ImageIcon imagenC=new ImageIcon("src/imagenes/clientes.jpg");
         Icon iconoC=new ImageIcon(imagenC.getImage().getScaledInstance(lblClientes.getWidth(), lblClientes.getHeight(),Image.SCALE_DEFAULT));
         lblClientes.setIcon(iconoC);
-        this.repaint();
-        
+        this.repaint(); */
     }
 
     
@@ -66,6 +70,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel2.setText("Clientes");
 
         lblmateriales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/materiales.jpg"))); // NOI18N
+        lblmateriales.setPreferredSize(new java.awt.Dimension(900, 800));
         lblmateriales.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblmaterialesMouseClicked(evt);

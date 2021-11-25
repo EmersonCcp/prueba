@@ -12,6 +12,7 @@ public class Trabajos {
     private Double tra_costo;
     private Double tra_ganancia;
     private Integer fk_cliente;
+    private String tra_cliente;
     
 
     public Trabajos() {
@@ -19,6 +20,16 @@ public class Trabajos {
 
     public Trabajos(Integer tra_codigo) {
         this.tra_codigo = tra_codigo;
+    }
+
+    public Trabajos(Integer tra_codigo, String tra_nombre, String tra_fecha_entrega, String tra_descripcion, Double tra_costo, Double tra_ganancia, String tra_cliente) {
+        this.tra_codigo = tra_codigo;
+        this.tra_nombre = tra_nombre;
+        this.tra_fecha_entrega = tra_fecha_entrega;
+        this.tra_descripcion = tra_descripcion;
+        this.tra_costo = tra_costo;
+        this.tra_ganancia = tra_ganancia;
+        this.tra_cliente = tra_cliente;
     }
 
    
@@ -100,6 +111,14 @@ public class Trabajos {
 
     public void setFk_cliente(Integer fk_cliente) {
         this.fk_cliente = fk_cliente;
+    }
+
+    public String getTra_cliente() {
+        return tra_cliente;
+    }
+
+    public void setTra_cliente(String tra_cliente) {
+        this.tra_cliente = tra_cliente;
     }
 
     

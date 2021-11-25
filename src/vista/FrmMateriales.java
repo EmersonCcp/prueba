@@ -29,10 +29,10 @@ public class FrmMateriales extends javax.swing.JFrame {
         initComponents();
         Refresh();
         this.setLocationRelativeTo(null);
-        ImageIcon imagen=new ImageIcon("src/imagenes/atras.png");
+        /*ImageIcon imagen=new ImageIcon("src/imagenes/atras.png");
         Icon icono=new ImageIcon(imagen.getImage().getScaledInstance(jlbAtras.getWidth(), jlbAtras.getHeight(),Image.SCALE_DEFAULT));
         jlbAtras.setIcon(icono);
-        this.repaint();
+        this.repaint();*/
         
     }
 
@@ -250,6 +250,7 @@ public class FrmMateriales extends javax.swing.JFrame {
             .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
         );
 
+        jlbAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/atras.png"))); // NOI18N
         jlbAtras.setText("jLabel11");
         jlbAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jlbAtras.addMouseListener(new java.awt.event.MouseAdapter() {

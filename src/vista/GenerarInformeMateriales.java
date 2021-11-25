@@ -303,7 +303,7 @@ public class GenerarInformeMateriales extends javax.swing.JFrame {
             Conexion con = new Conexion();
             Connection conn = con.Conectar();
             JasperReport reporte = null;
-            String path = "src\\reportes\\ReporteM.jasper";
+            String path = "C:\\Users\\Gabriel\\Documents\\NetBeansProjects\\FlexSystem\\src\\reportes\\ReporteM.jasper";
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
 
             JasperPrint jprint = JasperFillManager.fillReport(reporte, null, conn);
@@ -312,7 +312,12 @@ public class GenerarInformeMateriales extends javax.swing.JFrame {
             view.setVisible(true);
 
         } catch (JRException ex) {
+            JOptionPane.showMessageDialog(null, "Error "+ex);
 
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null ,"Errorr "+e );
+                    
+            
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 
